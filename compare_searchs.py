@@ -1,13 +1,13 @@
 import pyglet
 import random
 
-# Create a window, adjust size if needed to better accommodate the layout
+# สร้างหน้าจอแสดงผล
 window = pyglet.window.Window(width=1000, height=800, caption='Search Algorithms Comparison')
 batch = pyglet.graphics.Batch()
 
 def reset_searches():
     global numbers, linear_index, linear_found, binary_left, binary_right, binary_mid, binary_found, find_number
-    # Generate a list with random numbers and include 'find_number', then sort it for binary search
+    # สร้าง array ในการเก็บค่าโดยการสุ่มตัวเลข กำหนดให้ตัวแปร find_numbe r หมายถึงตัวเลขที่ต้องการค้นหา และสั่งให้จัดเรียงลำดับน้อย-มาก
     find_number = 35
     numbers = random.sample(range(1, 100), 21) + [find_number]
     random.shuffle(numbers)  # Shuffle for linear search
@@ -46,6 +46,7 @@ def on_key_press(symbol, modifiers):
     if symbol == pyglet.window.key.R:
         reset_searches()
 
+# กำหนดให้เกิดการเคลื่อนไหว ( เปลี่ยนแปลง)ทุก 0.5 วินาที
 pyglet.clock.schedule_interval(update_searches, 0.5)
 
 @window.event
