@@ -5,7 +5,7 @@ import random
 window = pyglet.window.Window(width=800, height=200, caption='Binary Search Visualization')
 batch = pyglet.graphics.Batch()
 
-# สร้าง  ar rayในการเก็บค่า  และกำหนดให้ตัวแปร find_number หมายถึงตัวเลขที่ต้องการค้นหา
+# สร้าง array ในการเก็บค่าโดยการสุ่มตัวเลข และกำหนดให้ตัวแปร find_number หมายถึงตัวเลขที่ต้องการค้นหา
 find_number = 69
 numbers = sorted(random.sample(range(1, 100), 19) + [find_number])
 
